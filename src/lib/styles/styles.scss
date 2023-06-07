@@ -1,0 +1,61 @@
+form {
+  position: relative;
+  width: auto;
+}
+
+.chosen-value,
+.value-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.chosen-value {
+
+  &::-webkit-input-placeholder {
+    color: #333;
+  }
+
+  &:hover {
+    background-color: blue;
+    cursor: pointer;
+
+    &::-webkit-input-placeholder {
+      color: #333;
+    }
+  }
+
+  &:focus,
+  &.open {
+    box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
+    outline: 0;
+    background-color: #ff908b;
+    color: #000;
+
+    &::-webkit-input-placeholder {
+      color: #000;
+    }
+  }
+}
+
+.value-list {
+
+  &.open {
+    max-height: 320px;
+    overflow: auto;
+  }
+
+  li {
+    
+    &:hover {
+      background-color: #ff908b;
+    }
+
+    &.closed {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0;
+      opacity: 0;
+    }
+  }
+}
