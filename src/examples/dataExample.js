@@ -234,10 +234,6 @@ export const examples =[
     {
         "name": "Wyoming",
         "abbreviation": "WY"
-    },
-    {
-        "name": "Wyoming",
-        "abbreviation": "WY"
     }
   ];
 

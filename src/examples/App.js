@@ -6,7 +6,7 @@ const App = () => (
   <div style={{ width: 640, margin: "15px auto" }}>
     <h1>Hello React</h1>
     
-    <DropDown value={examples} optionValue="name" width={200} height={100} color="red"placeholder="test"/>
+    <DropDown option={examples} optionValue="name"  placeholder="test" colorClass="red-style medium-style" color="red"/>
     </div>
 );
 

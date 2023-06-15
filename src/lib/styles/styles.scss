@@ -1,61 +1,307 @@
 form {
   position: relative;
   width: auto;
+  
 }
 
-.chosen-value,
-.value-list {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.chosen-value {
-
-  &::-webkit-input-placeholder {
-    color: #333;
+input {
+  border: 2px solid;
+  &::after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
   }
-
+}
+.chosen-value {
+  + ul {
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+  }
   &:hover {
-    background-color: blue;
     cursor: pointer;
-
-    &::-webkit-input-placeholder {
-      color: #333;
-    }
   }
 
   &:focus,
   &.open {
-    box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
     outline: 0;
-    background-color: #ff908b;
-    color: #000;
-
-    &::-webkit-input-placeholder {
-      color: #000;
-    }
   }
 }
 
 .value-list {
-
   &.open {
     max-height: 320px;
     overflow: auto;
   }
 
   li {
-    
-    &:hover {
-      background-color: #ff908b;
-    }
-
     &.closed {
       max-height: 0;
       overflow: hidden;
       padding: 0;
       opacity: 0;
     }
+  }
+}
+
+/*color*/
+/*.black-style {
+  color: white;
+  border-color: black;
+  background: black;
+
+  &.chosen-value {
+    + ul {
+      border-color: transparent;
+    }
+
+    &::-webkit-input-placeholder {
+      color: white;
+    }
+
+    &:hover {
+      background-color: white;
+      color: black;
+      cursor: pointer;
+
+      &::-webkit-input-placeholder {
+        color: white;
+      }
+    }
+
+    &:focus,
+    &.open {
+      outline: 0;
+      background-color: white;
+      color: #000;
+
+      &::-webkit-input-placeholder {
+        color: #000;
+      }
+    }
+  }
+  + .arrow {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid white;
+    pointer-events: none;
+  }
+
+  + .value-list {
+    &.open {
+      overflow: auto;
+    }
+
+    li {
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+
+      &.closed {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        opacity: 0;
+      }
+    }
+  }
+}*/
+
+.red-style {
+  input {
+    color: white;
+    border-color: rgb(161, 15, 15);
+    background: rgb(161, 15, 15);
+    &.chosen-value {
+      + ul {
+        border-color: transparent;
+      }
+
+      &::-webkit-input-placeholder {
+        color: white;
+      }
+
+      &:hover {
+        background-color: white;
+        color: rgb(161, 15, 15);
+        cursor: pointer;
+
+        &::-webkit-input-placeholder {
+          color: white;
+        }
+        + .arrow {
+          border-color: rgb(161, 15, 15) transparent transparent transparent;
+        }
+      }
+      &.open {
+        outline: 0;
+        background-color: white;
+        color: rgb(161, 15, 15);
+
+        &::-webkit-input-placeholder {
+          color: rgb(161, 15, 15);
+        }
+        + .arrow {
+          border-color: rgb(161, 15, 15) transparent transparent transparent;
+          transform: translateY(50%);
+          rotate: 180deg;
+        }
+      }
+    }
+
+    + .arrow {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 4px 0 4px;
+      border-color: white transparent transparent transparent;
+      pointer-events: none;
+    }
+  }
+
+  + .value-list {
+    border-color: transparent transparent transparent transparent;
+    &.open {
+      overflow: auto;
+    }
+    li {
+      color: rgb(161, 15, 15);
+
+      &:hover {
+        background-color: rgb(161, 15, 15);
+        color: white;
+      }
+
+      &.closed {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+/*.blue-style {
+  color: white;
+  border-color: rgb(3, 3, 153);
+  background: rgb(3, 3, 153);
+
+  &.chosen-value {
+    + ul {
+      border-color: transparent;
+    }
+
+    &::-webkit-input-placeholder {
+      color: white;
+    }
+
+    &:hover {
+      background-color: white;
+      color: rgb(3, 3, 153);
+      cursor: pointer;
+
+      &::-webkit-input-placeholder {
+        color: white;
+      }
+    }
+
+    &:focus,
+    &.open {
+      outline: 0;
+      background-color: white;
+      color: rgb(3, 3, 153);
+
+      &::-webkit-input-placeholder {
+        color: rgb(3, 3, 153);
+      }
+    }
+  }
+  + .arrow {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid white;
+    pointer-events: none;
+  }
+
+  + .value-list {
+    &.open {
+      overflow: auto;
+    }
+
+    li {
+      color: rgb(3, 3, 153);
+
+      &:hover {
+        background-color: rgb(3, 3, 153);
+        color: white;
+      }
+
+      &.closed {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        opacity: 0;
+      }
+    }
+  }
+}*/
+
+/*border-style*/
+.radius-style {
+  input {
+    border-radius: 10px;
+  }
+
+  + ul {
+    border-radius: 10px;
+  }
+}
+
+.strong-style {
+  input {
+    border: 8px solid;
+  }
+
+  + ul {
+    border-left: 8px solid;
+    border-right: 8px solid;
+  }
+}
+
+.medium-style {
+  input {
+    border: 4px solid;
+  }
+  + ul {
+    border-left: 4px solid;
+    border-right: 4px solid;
+  }
+}
+
+.noBorder-style {
+  input {
+    border: none;
   }
 }
