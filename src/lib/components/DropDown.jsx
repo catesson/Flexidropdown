@@ -2,8 +2,9 @@ import React from "react";
 import "../styles/styles.css";
 import { useState } from "react";
 import { useEffect } from "react";
-
+import cx from "classnames";
 import styled from "styled-components";
+import { allBorderClass, allWidthClass, allColorsClass, allFontClass } from "./classGenerator";
 
 const StyledSelect = styled.ul`
   width: ${(props) => (props.width ? `${props.width}px` : `100%`)};
@@ -20,6 +21,8 @@ const StyledSelect = styled.ul`
 const StyleList = styled.li`
   position: relative;
   height: ${(props) => (props.height ? `${props.height}px` : ``)};
+  font-family: ${(props) =>
+    props.fontFamily ? `${props.fontFamily}` : "sans-serif"};
   background-color: #fafcfd;
   font-size: 1.1rem;
   text-align: center;
@@ -29,54 +32,42 @@ const StyleList = styled.li`
   padding: ${(props) => (props.padding ? `${props.padding}px` : `3px`)};
 `;
 const StyledInput = styled.input`
-
   width: ${(props) => (props.width ? `${props.width}px` : `100%`)};
-  height: ${(props) => (props.height ? `${props.height}px` : ``)};
-  text-align: center;
+  height: ${(props) => (props.height ? `${props.height}px` : `auto`)};
   font-family: ${(props) =>
     props.fontFamily ? `${props.fontFamily}` : "sans-serif"};
-  text-transform: uppercase;
-  font-weight: 600;
   font-size: 1.1rem;
   padding: ${(props) => (props.padding ? `${props.padding}px` : `3px`)};
   transition: 0.3s ease-in-out;
 `;
 const StyledDiv = styled.div`
-position:relative;
-`
+  position: relative;
+`;
 
 export function DropDown({
   option,
   optionValue,
   width,
   height,
-  padding,
-  fontFamily,
   colorClass,
+  widthClass,
+  borderClass,
+  fontFamily,
+  padding,
+  fontClass,
   placeholder,
   defaultValue,
+  id
 }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [inputValue, setInputValue] = useState(
     defaultValue ? defaultValue : ""
   );
   const handleCloseOpenClick = () => {
     setIsOpen(!isOpen);
+    console.log("j'ai click")
   };
-
-  const allData = option.map((data) => {
-    return (
-      <StyleList
-        onClick={() => {
-          handleCloseOpenClick();
-          setInputValue(data[optionValue]);
-        }}
-        key={data[optionValue]}
-      >
-        {data[optionValue]}
-      </StyleList>
-    );
-  });
+  
   useEffect(() => {
     isOpen
       ? document.addEventListener("click", handleCloseOpenClick)
@@ -87,27 +78,52 @@ export function DropDown({
   }, [isOpen]);
 
   return (
-    <form>
-<StyledDiv className={colorClass} >
+    <div>
+      <StyledDiv
+      onClick={() => {
+        handleCloseOpenClick();
+      }}
+        className={cx(
+          "styleDiv",
+          colorClass ? allColorsClass(colorClass) : "",
+          widthClass ? allWidthClass(widthClass) :"",
+          fontClass ? allFontClass(fontClass) : "",
+          borderClass ? allBorderClass(borderClass) : "",
+        )}
+      >
         <StyledInput
           className={`chosen-value ${isOpen ? "open" : ""}`}
           type="text"
           defaultValue={inputValue}
           placeholder={placeholder}
-          onClick={handleCloseOpenClick}
+          onClick={() => {
+            handleCloseOpenClick();
+          }}
           width={width}
           height={height}
-          id="dropdown-input"
+          id={`${id ? id : "dropdown-input"}`}
         />
-        <label for="dropdown-input" className="arrow"></label>
-</StyledDiv>
+        <label htmlFor={`${id ? id : "dropdown-input"}`}className="arrow"></label>
+      </StyledDiv>
       <StyledSelect
         className={`value-list ${isOpen ? "open" : ""}`}
         width={width}
         height={height}
       >
-        {allData}
+        {option.map((data) => (
+          <StyleList
+            onClick={() => {
+              handleCloseOpenClick();
+              setInputValue(data[optionValue]);
+            }}
+            key={data[optionValue]}
+            padding={padding}
+            fontFamily={fontFamily}
+          >
+            {data[optionValue]}
+          </StyleList>
+        ))}
       </StyledSelect>
-    </form>
+      </div>
   );
 }

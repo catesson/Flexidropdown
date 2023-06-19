@@ -3,10 +3,10 @@ form {
   width: auto;
 }
 
-input {
+.styleDiv input {
   border: 2px solid;
 }
-input::after {
+.styleDiv input::after {
   position: absolute;
   content: "";
   top: 14px;
@@ -16,102 +16,58 @@ input::after {
   border: 6px solid transparent;
   border-color: #fff transparent transparent transparent;
 }
-
-.chosen-value + ul {
+.styleDiv input.chosen-value + ul {
   border-left: 2px solid transparent;
   border-right: 2px solid transparent;
 }
-.chosen-value:hover {
+.styleDiv input.chosen-value:hover {
   cursor: pointer;
 }
-.chosen-value:focus, .chosen-value.open {
+.styleDiv input.chosen-value:focus {
   outline: 0;
 }
-
-.value-list.open {
+.styleDiv input.chosen-value.open {
+  outline: 0;
+}
+.styleDiv input.chosen-value.open + .arrow {
+  transform: translateY(50%);
+  rotate: 180deg;
+}
+.styleDiv input + .arrow {
+  position: absolute;
+  top: 6px;
+  bottom: 0;
+  right: 10px;
+  margin: auto 0;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 4px 0 4px;
+  border-color: black transparent transparent transparent;
+  pointer-events: none;
+}
+.styleDiv + .value-list.open {
   max-height: 320px;
   overflow: auto;
 }
-.value-list li.closed {
+.styleDiv + .value-list li.closed {
   max-height: 0;
   overflow: hidden;
   padding: 0;
   opacity: 0;
 }
+.styleDiv + .value-list li:hover {
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
 /*color*/
-/*.black-style {
-  color: white;
-  border-color: black;
-  background: black;
-
-  &.chosen-value {
-    + ul {
-      border-color: transparent;
-    }
-
-    &::-webkit-input-placeholder {
-      color: white;
-    }
-
-    &:hover {
-      background-color: white;
-      color: black;
-      cursor: pointer;
-
-      &::-webkit-input-placeholder {
-        color: white;
-      }
-    }
-
-    &:focus,
-    &.open {
-      outline: 0;
-      background-color: white;
-      color: #000;
-
-      &::-webkit-input-placeholder {
-        color: #000;
-      }
-    }
-  }
-  + .arrow {
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid white;
-    pointer-events: none;
-  }
-
-  + .value-list {
-    &.open {
-      overflow: auto;
-    }
-
-    li {
-      &:hover {
-        background-color: black;
-        color: white;
-      }
-
-      &.closed {
-        max-height: 0;
-        overflow: hidden;
-        padding: 0;
-        opacity: 0;
-      }
-    }
-  }
-}*/
+/*RED*/
 .red-style input {
-  color: white;
+  color: rgb(161, 15, 15);
   border-color: rgb(161, 15, 15);
-  background: rgb(161, 15, 15);
+  background: white;
 }
 .red-style input.chosen-value + ul {
   border-color: transparent;
@@ -120,9 +76,8 @@ input::after {
   color: white;
 }
 .red-style input.chosen-value:hover {
-  background-color: white;
+  background-color: rgba(161, 15, 15, 0.1);
   color: rgb(161, 15, 15);
-  cursor: pointer;
 }
 .red-style input.chosen-value:hover::-webkit-input-placeholder {
   color: white;
@@ -131,146 +86,265 @@ input::after {
   border-color: rgb(161, 15, 15) transparent transparent transparent;
 }
 .red-style input.chosen-value.open {
-  outline: 0;
-  background-color: white;
+  background-color: rgba(161, 15, 15, 0.1);
   color: rgb(161, 15, 15);
 }
 .red-style input.chosen-value.open::-webkit-input-placeholder {
   color: rgb(161, 15, 15);
 }
-.red-style input.chosen-value.open + .arrow {
-  border-color: rgb(161, 15, 15) transparent transparent transparent;
-  transform: translateY(50%);
-  rotate: 180deg;
-}
 .red-style input + .arrow {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 6px 4px 0 4px;
-  border-color: white transparent transparent transparent;
-  pointer-events: none;
+  border-color: rgb(161, 15, 15) transparent transparent transparent;
 }
 .red-style + .value-list {
   border-color: transparent transparent transparent transparent;
-}
-.red-style + .value-list.open {
-  overflow: auto;
 }
 .red-style + .value-list li {
   color: rgb(161, 15, 15);
 }
 .red-style + .value-list li:hover {
-  background-color: rgb(161, 15, 15);
-  color: white;
-}
-.red-style + .value-list li.closed {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0;
-  opacity: 0;
+  border: 1px solid rgb(161, 15, 15);
+  background-color: rgba(161, 15, 15, 0.1);
 }
 
-/*.blue-style {
+/*.BLUE*/
+.blue-style input {
+  color: rgb(18, 27, 143);
+  border-color: rgb(18, 27, 143);
+  background: white;
+}
+.blue-style input.chosen-value + ul {
+  border-color: transparent;
+}
+.blue-style input.chosen-value::-webkit-input-placeholder {
   color: white;
-  border-color: rgb(3, 3, 153);
-  background: rgb(3, 3, 153);
+}
+.blue-style input.chosen-value:hover {
+  background-color: rgba(18, 27, 143, 0.1);
+  color: rgb(18, 27, 143);
+}
+.blue-style input.chosen-value:hover::-webkit-input-placeholder {
+  color: white;
+}
+.blue-style input.chosen-value:hover + .arrow {
+  border-color: rgb(18, 27, 143) transparent transparent transparent;
+}
+.blue-style input.chosen-value.open {
+  background-color: rgba(18, 27, 143, 0.1);
+  color: rgb(18, 27, 143);
+}
+.blue-style input.chosen-value.open::-webkit-input-placeholder {
+  color: rgb(18, 27, 143);
+}
+.blue-style input + .arrow {
+  border-color: rgb(18, 27, 143) transparent transparent transparent;
+}
+.blue-style + .value-list {
+  border-color: transparent transparent transparent transparent;
+}
+.blue-style + .value-list li {
+  color: rgb(18, 27, 143);
+}
+.blue-style + .value-list li:hover {
+  border: 1px solid rgb(18, 27, 143);
+  background-color: rgba(18, 27, 143, 0.1);
+}
 
-  &.chosen-value {
-    + ul {
-      border-color: transparent;
-    }
+/*.GREEN*/
+.green-style input {
+  color: rgb(31, 90, 23);
+  border-color: rgb(31, 90, 23);
+  background: white;
+}
+.green-style input.chosen-value + ul {
+  border-color: transparent;
+}
+.green-style input.chosen-value::-webkit-input-placeholder {
+  color: white;
+}
+.green-style input.chosen-value:hover {
+  background-color: rgba(31, 90, 23, 0.1);
+  color: rgb(31, 90, 23);
+}
+.green-style input.chosen-value:hover::-webkit-input-placeholder {
+  color: white;
+}
+.green-style input.chosen-value:hover + .arrow {
+  border-color: rgb(31, 90, 23) transparent transparent transparent;
+}
+.green-style input.chosen-value.open {
+  background-color: rgba(31, 90, 23, 0.1);
+  color: rgb(31, 90, 23);
+}
+.green-style input.chosen-value.open::-webkit-input-placeholder {
+  color: rgb(31, 90, 23);
+}
+.green-style input + .arrow {
+  border-color: rgb(31, 90, 23) transparent transparent transparent;
+}
+.green-style + .value-list {
+  border-color: transparent transparent transparent transparent;
+}
+.green-style + .value-list li {
+  color: rgb(31, 90, 23);
+}
+.green-style + .value-list li:hover {
+  border: 1px solid rgb(31, 90, 23);
+  background-color: rgba(31, 90, 23, 0.1);
+}
 
-    &::-webkit-input-placeholder {
-      color: white;
-    }
-
-    &:hover {
-      background-color: white;
-      color: rgb(3, 3, 153);
-      cursor: pointer;
-
-      &::-webkit-input-placeholder {
-        color: white;
-      }
-    }
-
-    &:focus,
-    &.open {
-      outline: 0;
-      background-color: white;
-      color: rgb(3, 3, 153);
-
-      &::-webkit-input-placeholder {
-        color: rgb(3, 3, 153);
-      }
-    }
-  }
-  + .arrow {
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid white;
-    pointer-events: none;
-  }
-
-  + .value-list {
-    &.open {
-      overflow: auto;
-    }
-
-    li {
-      color: rgb(3, 3, 153);
-
-      &:hover {
-        background-color: rgb(3, 3, 153);
-        color: white;
-      }
-
-      &.closed {
-        max-height: 0;
-        overflow: hidden;
-        padding: 0;
-        opacity: 0;
-      }
-    }
-  }
-}*/
 /*border-style*/
-.radius-style input {
+.rad5-border input {
+  border-radius: 5px;
+}
+.rad5-border + ul {
+  border-radius: 5px;
+}
+
+.rad10-border input {
   border-radius: 10px;
 }
-.radius-style + ul {
+.rad10-border + ul {
   border-radius: 10px;
 }
 
-.strong-style input {
+.rad15-border input {
+  border-radius: 15px;
+}
+.rad15-border + ul {
+  border-radius: 15px;
+}
+
+.rad20-border input {
+  border-radius: 20px;
+}
+.rad20-border + ul {
+  border-radius: 20px;
+}
+
+.rad25-border input {
+  border-radius: 25px;
+}
+.rad25-border + ul {
+  border-radius: 25px;
+}
+
+.str-border input {
   border: 8px solid;
 }
-.strong-style + ul {
+.str-border + ul {
   border-left: 8px solid;
   border-right: 8px solid;
 }
 
-.medium-style input {
+.mdm-border input {
   border: 4px solid;
 }
-.medium-style + ul {
+.mdm-border + ul {
   border-left: 4px solid;
   border-right: 4px solid;
 }
 
-.noBorder-style input {
+.no-border input {
   border: none;
+}
+
+/*taille*/
+.W-30,
+.W-30 + ul {
+  width: 30%;
+}
+
+.W-50,
+.W-50 + ul {
+  width: 50%;
+}
+
+.W-70,
+.W-70 + ul {
+  width: 70%;
+}
+
+.W-90,
+.W-90 + ul {
+  width: 90%;
+}
+
+/*police*/
+.ft-bold,
+.ft-bold input,
+.ft-bold + ul,
+.ft-bold + ul li {
+  font-weight: bold;
+}
+
+.ft-light,
+.ft-light input,
+.ft-light + ul,
+.ft-light + ul li {
+  font-weight: lighter;
+}
+
+.ft-uppercase,
+.ft-uppercase input,
+.ft-uppercase + ul,
+.ft-uppercase + ul li {
+  text-transform: uppercase;
+}
+
+.ft1,
+.ft1 input,
+.ft1 + ul,
+.ft1 + ul li {
+  font-size: 0.5rem;
+}
+
+.ft2,
+.ft2 input,
+.ft2 + ul,
+.ft2 + ul li {
+  font-size: 0.8rem;
+}
+
+.ft3,
+.ft3 input,
+.ft3 + ul,
+.ft3 + ul li {
+  font-size: 1rem;
+}
+
+.ft4,
+.ft4 input,
+.ft4 + ul,
+.ft4 + ul li {
+  font-size: 1.2rem;
+}
+
+.ft5,
+.ft5 input,
+.ft5 + ul,
+.ft5 + ul li {
+  font-size: 1.5rem;
+}
+
+.ft6,
+.ft6 input,
+.ft6 + ul,
+.ft6 + ul li {
+  font-size: 1.7rem;
+}
+
+.txt-center,
+.txt-center input,
+.txt-center + ul,
+.txt-center + ul li {
+  text-align: center;
+}
+
+.txt-right,
+.txt-right input,
+.txt-right + ul,
+.txt-right + ul li {
+  text-align: right;
 }
 
 /*# sourceMappingURL=styles.css.map */

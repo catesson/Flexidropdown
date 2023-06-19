@@ -1,8 +1,12 @@
 {
   "name": "flexidropdown",
-  "version": "0.1.0",
+  "version": "0.1.13",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/catesson/flexidropdown"
+  },
   "files": [
     "dist"
   ],
@@ -13,10 +17,6 @@
     "react-scripts": "1.1.4",
     "react-test-renderer": "^16.3.2"
   },
-  "peerDependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
-  },
   "scripts": {
     "start": "react-scripts start",
     "sass": "sass --watch ./src/lib/styles/styles.scss:./src/lib/styles/styles.css",
@@ -26,6 +26,7 @@
     "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__"
   },
   "dependencies": {
+    "classnames": "^2.3.2",
     "node-sass": "^9.0.0",
     "styled-components": "^5.3.11"
   }

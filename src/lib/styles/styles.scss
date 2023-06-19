@@ -1,128 +1,86 @@
 form {
   position: relative;
   width: auto;
-  
 }
 
-input {
-  border: 2px solid;
-  &::after {
-    position: absolute;
-    content: "";
-    top: 14px;
-    right: 10px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: #fff transparent transparent transparent;
-  }
-}
-.chosen-value {
-  + ul {
-    border-left: 2px solid transparent;
-    border-right: 2px solid transparent;
-  }
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:focus,
-  &.open {
-    outline: 0;
-  }
-}
-
-.value-list {
-  &.open {
-    max-height: 320px;
-    overflow: auto;
-  }
-
-  li {
-    &.closed {
-      max-height: 0;
-      overflow: hidden;
-      padding: 0;
-      opacity: 0;
+.styleDiv {
+  input {
+    border: 2px solid;
+    &::after {
+      position: absolute;
+      content: "";
+      top: 14px;
+      right: 10px;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-color: #fff transparent transparent transparent;
     }
-  }
-}
+    &.chosen-value {
+      + ul {
+        border-left: 2px solid transparent;
+        border-right: 2px solid transparent;
+      }
+      &:hover {
+        cursor: pointer;
+      }
 
-/*color*/
-/*.black-style {
-  color: white;
-  border-color: black;
-  background: black;
-
-  &.chosen-value {
-    + ul {
-      border-color: transparent;
-    }
-
-    &::-webkit-input-placeholder {
-      color: white;
-    }
-
-    &:hover {
-      background-color: white;
-      color: black;
-      cursor: pointer;
-
-      &::-webkit-input-placeholder {
-        color: white;
+      &:focus {
+        outline: 0;
+      }
+      &.open {
+        outline: 0;
+        + .arrow {
+          transform: translateY(50%);
+          rotate: 180deg;
+        }
       }
     }
-
-    &:focus,
-    &.open {
-      outline: 0;
-      background-color: white;
-      color: #000;
-
-      &::-webkit-input-placeholder {
-        color: #000;
-      }
+    + .arrow {
+      position: absolute;
+      top: 6px;
+      bottom: 0;
+      right: 10px;
+      margin: auto 0;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 4px 0 4px;
+      border-color: black transparent transparent transparent;
+      pointer-events: none;
     }
-  }
-  + .arrow {
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid white;
-    pointer-events: none;
   }
 
   + .value-list {
     &.open {
+      max-height: 320px;
       overflow: auto;
     }
 
     li {
-      &:hover {
-        background-color: black;
-        color: white;
-      }
-
       &.closed {
         max-height: 0;
         overflow: hidden;
         padding: 0;
         opacity: 0;
       }
+      &:hover {
+        border: 1px solid rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.1);
+      }
     }
   }
-}*/
+}
+
+/*color*/
+/*RED*/
 
 .red-style {
   input {
-    color: white;
+    color: rgb(161, 15, 15);
     border-color: rgb(161, 15, 15);
-    background: rgb(161, 15, 15);
+    background: white;
     &.chosen-value {
       + ul {
         border-color: transparent;
@@ -133,9 +91,8 @@ input {
       }
 
       &:hover {
-        background-color: white;
+        background-color: rgba(161, 15, 15, 0.1);
         color: rgb(161, 15, 15);
-        cursor: pointer;
 
         &::-webkit-input-placeholder {
           color: white;
@@ -145,141 +102,158 @@ input {
         }
       }
       &.open {
-        outline: 0;
-        background-color: white;
+        background-color: rgba(161, 15, 15, 0.1);
         color: rgb(161, 15, 15);
 
         &::-webkit-input-placeholder {
           color: rgb(161, 15, 15);
         }
-        + .arrow {
-          border-color: rgb(161, 15, 15) transparent transparent transparent;
-          transform: translateY(50%);
-          rotate: 180deg;
-        }
       }
     }
 
     + .arrow {
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 6px 4px 0 4px;
-      border-color: white transparent transparent transparent;
-      pointer-events: none;
+      border-color: rgb(161, 15, 15) transparent transparent transparent;
     }
   }
 
   + .value-list {
     border-color: transparent transparent transparent transparent;
-    &.open {
-      overflow: auto;
-    }
     li {
       color: rgb(161, 15, 15);
 
       &:hover {
-        background-color: rgb(161, 15, 15);
-        color: white;
-      }
-
-      &.closed {
-        max-height: 0;
-        overflow: hidden;
-        padding: 0;
-        opacity: 0;
+        border: 1px solid rgb(161, 15, 15);
+        background-color: rgba(161, 15, 15, 0.1);
       }
     }
   }
 }
 
-/*.blue-style {
-  color: white;
-  border-color: rgb(3, 3, 153);
-  background: rgb(3, 3, 153);
+/*.BLUE*/
 
-  &.chosen-value {
-    + ul {
-      border-color: transparent;
-    }
-
-    &::-webkit-input-placeholder {
-      color: white;
-    }
-
-    &:hover {
-      background-color: white;
-      color: rgb(3, 3, 153);
-      cursor: pointer;
+.blue-style {
+  input {
+    color: rgb(18, 27, 143);
+    border-color: rgb(18, 27, 143);
+    background: white;
+    &.chosen-value {
+      + ul {
+        border-color: transparent;
+      }
 
       &::-webkit-input-placeholder {
         color: white;
       }
-    }
 
-    &:focus,
-    &.open {
-      outline: 0;
-      background-color: white;
-      color: rgb(3, 3, 153);
+      &:hover {
+        background-color: rgb(18, 27, 143, 0.1);
+        color: rgb(18, 27, 143);
 
-      &::-webkit-input-placeholder {
-        color: rgb(3, 3, 153);
+        &::-webkit-input-placeholder {
+          color: white;
+        }
+        + .arrow {
+          border-color: rgb(18, 27, 143) transparent transparent transparent;
+        }
+      }
+      &.open {
+        background-color: rgb(18, 27, 143, 0.1);
+        color: rgb(18, 27, 143);
+
+        &::-webkit-input-placeholder {
+          color: rgb(18, 27, 143);
+        }
       }
     }
-  }
-  + .arrow {
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid white;
-    pointer-events: none;
+
+    + .arrow {
+      border-color: rgb(18, 27, 143) transparent transparent transparent;
+    }
   }
 
   + .value-list {
-    &.open {
-      overflow: auto;
-    }
-
+    border-color: transparent transparent transparent transparent;
     li {
-      color: rgb(3, 3, 153);
+      color: rgb(18, 27, 143);
 
       &:hover {
-        background-color: rgb(3, 3, 153);
+        border: 1px solid rgb(18, 27, 143);
+        background-color: rgb(18, 27, 143, 0.1);
+      }
+    }
+  }
+}
+/*.GREEN*/
+
+.green-style {
+  input {
+    color: rgb(31, 90, 23);
+    border-color: rgb(31, 90, 23);
+    background: white;
+    &.chosen-value {
+      + ul {
+        border-color: transparent;
+      }
+
+      &::-webkit-input-placeholder {
         color: white;
       }
 
-      &.closed {
-        max-height: 0;
-        overflow: hidden;
-        padding: 0;
-        opacity: 0;
+      &:hover {
+        background-color: rgb(31, 90, 23, 0.1);
+        color: rgb(31, 90, 23);
+
+        &::-webkit-input-placeholder {
+          color: white;
+        }
+        + .arrow {
+          border-color: rgb(31, 90, 23) transparent transparent transparent;
+        }
+      }
+      &.open {
+        background-color: rgb(31, 90, 23, 0.1);
+        color: rgb(31, 90, 23);
+
+        &::-webkit-input-placeholder {
+          color: rgb(31, 90, 23);
+        }
+      }
+    }
+
+    + .arrow {
+      border-color: rgb(31, 90, 23) transparent transparent transparent;
+    }
+  }
+
+  + .value-list {
+    border-color: transparent transparent transparent transparent;
+    li {
+      color: rgb(31, 90, 23);
+
+      &:hover {
+        border: 1px solid rgb(31, 90, 23);
+        background-color: rgb(31, 90, 23, 0.1);
       }
     }
   }
-}*/
+}
 
 /*border-style*/
-.radius-style {
-  input {
-    border-radius: 10px;
-  }
 
-  + ul {
-    border-radius: 10px;
+@for $i from 1 through 5 {
+  $value: $i * 5;
+  .rad#{$value}-border {
+    input {
+      border-radius: #{$value}px;
+    }
+
+    + ul {
+      border-radius: #{$value}px;
+    }
   }
 }
 
-.strong-style {
+.str-border {
   input {
     border: 8px solid;
   }
@@ -290,7 +264,7 @@ input {
   }
 }
 
-.medium-style {
+.mdm-border {
   input {
     border: 4px solid;
   }
@@ -300,8 +274,92 @@ input {
   }
 }
 
-.noBorder-style {
+.no-border {
   input {
     border: none;
   }
+}
+
+/*taille*/
+
+@for $i from 1 through 4 {
+  $value: 10 + ($i * 20);  
+  .W-#{$value},
+  .W-#{$value} + ul {
+    width: percentage($value / 100);
+  }
+}
+
+/*police*/
+.ft-bold,
+.ft-bold input,
+.ft-bold + ul,
+.ft-bold + ul li {
+  font-weight: bold;
+}
+.ft-light,
+.ft-light input,
+.ft-light + ul,
+.ft-light + ul li {
+  font-weight: lighter;
+}
+
+.ft-uppercase,
+.ft-uppercase input,
+.ft-uppercase + ul,
+.ft-uppercase + ul li {
+  text-transform: uppercase;
+}
+
+.ft1,
+.ft1 input,
+.ft1 + ul,
+.ft1 + ul li {
+  font-size: 0.5rem;
+}
+
+.ft2,
+.ft2 input,
+.ft2 + ul,
+.ft2 + ul li {
+  font-size: 0.8rem;
+}
+.ft3,
+.ft3 input,
+.ft3 + ul,
+.ft3 + ul li {
+  font-size: 1rem;
+}
+.ft4,
+.ft4 input,
+.ft4 + ul,
+.ft4 + ul li {
+  font-size: 1.2rem;
+}
+.ft5,
+.ft5 input,
+.ft5 + ul,
+.ft5 + ul li {
+  font-size: 1.5rem;
+}
+
+.ft6,
+.ft6 input,
+.ft6 + ul,
+.ft6 + ul li {
+  font-size: 1.7rem;
+}
+
+.txt-center,
+.txt-center input,
+.txt-center + ul,
+.txt-center + ul li {
+  text-align: center;
+}
+
+.txt-right,
+.txt-right input,
+.txt-right + ul,
+.txt-right + ul li {
+  text-align: right;
 }
