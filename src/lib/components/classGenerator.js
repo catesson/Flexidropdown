@@ -15,6 +15,7 @@ export const allWidthClass = (width) => {
     }
 }
 
+
 export const allBorderClass = (border) => {
     return {
         "str-border" : border.includes("str-border"),
