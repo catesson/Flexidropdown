@@ -4,8 +4,10 @@ form {
 }
 
 .styleDiv {
-  input {
+  width: 100%;
+  input{    
     border: 2px solid;
+    cursor: pointer;
     &::after {
       position: absolute;
       content: "";
@@ -21,9 +23,6 @@ form {
         border-left: 2px solid transparent;
         border-right: 2px solid transparent;
       }
-      &:hover {
-        cursor: pointer;
-      }
 
       &:focus {
         outline: 0;
@@ -34,6 +33,9 @@ form {
           transform: translateY(50%);
           rotate: 180deg;
         }
+      }
+      &:hover{
+        cursor: cursor;
       }
     }
     + .arrow {
@@ -66,6 +68,7 @@ form {
         opacity: 0;
       }
       &:hover {
+        cursor: pointer;
         border: 1px solid rgb(0, 0, 0);
         background-color: rgba(0, 0, 0, 0.1);
       }
@@ -76,11 +79,11 @@ form {
 /*color*/
 /*RED*/
 
-.red-style {
+ .red-style {
   input {
     color: rgb(161, 15, 15);
     border-color: rgb(161, 15, 15);
-    background: white;
+    background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
     &.chosen-value {
       + ul {
         border-color: transparent;
@@ -91,7 +94,7 @@ form {
       }
 
       &:hover {
-        background-color: rgba(161, 15, 15, 0.1);
+        background:  linear-gradient(rgba(161, 15, 15, 0.1),rgba(161, 15, 15, 0.1)),linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));    
         color: rgb(161, 15, 15);
 
         &::-webkit-input-placeholder {
@@ -102,7 +105,7 @@ form {
         }
       }
       &.open {
-        background-color: rgba(161, 15, 15, 0.1);
+        background:  linear-gradient(rgba(161, 15, 15, 0.1),rgba(161, 15, 15, 0.1)),linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
         color: rgb(161, 15, 15);
 
         &::-webkit-input-placeholder {
@@ -119,11 +122,12 @@ form {
   + .value-list {
     border-color: transparent transparent transparent transparent;
     li {
+      background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
       color: rgb(161, 15, 15);
 
       &:hover {
         border: 1px solid rgb(161, 15, 15);
-        background-color: rgba(161, 15, 15, 0.1);
+        background:  linear-gradient(rgba(161, 15, 15, 0.1),rgba(161, 15, 15, 0.1)),linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
       }
     }
   }
@@ -135,7 +139,7 @@ form {
   input {
     color: rgb(18, 27, 143);
     border-color: rgb(18, 27, 143);
-    background: white;
+    background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
     &.chosen-value {
       + ul {
         border-color: transparent;
@@ -146,7 +150,7 @@ form {
       }
 
       &:hover {
-        background-color: rgb(18, 27, 143, 0.1);
+        background:  linear-gradient(rgba(18, 27, 143, 0.1),rgba(18, 27, 143, 0.1)),linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
         color: rgb(18, 27, 143);
 
         &::-webkit-input-placeholder {
@@ -157,7 +161,7 @@ form {
         }
       }
       &.open {
-        background-color: rgb(18, 27, 143, 0.1);
+        background:  linear-gradient(rgba(18, 27, 143, 0.1),rgba(18, 27, 143, 0.1)),linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
         color: rgb(18, 27, 143);
 
         &::-webkit-input-placeholder {
@@ -174,11 +178,12 @@ form {
   + .value-list {
     border-color: transparent transparent transparent transparent;
     li {
+      background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
       color: rgb(18, 27, 143);
 
       &:hover {
         border: 1px solid rgb(18, 27, 143);
-        background-color: rgb(18, 27, 143, 0.1);
+        background:  linear-gradient(rgba(18, 27, 143, 0.1),rgba(18, 27, 143, 0.1)),linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
       }
     }
   }
@@ -189,7 +194,7 @@ form {
   input {
     color: rgb(31, 90, 23);
     border-color: rgb(31, 90, 23);
-    background: white;
+    background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
     &.chosen-value {
       + ul {
         border-color: transparent;
@@ -200,7 +205,7 @@ form {
       }
 
       &:hover {
-        background-color: rgb(31, 90, 23, 0.1);
+        background:  linear-gradient(rgba(31, 90, 23, 0.1),rgba(31, 90, 23, 0.1)),linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
         color: rgb(31, 90, 23);
 
         &::-webkit-input-placeholder {
@@ -211,7 +216,7 @@ form {
         }
       }
       &.open {
-        background-color: rgb(31, 90, 23, 0.1);
+        background:  linear-gradient(rgba(31, 90, 23, 0.1),rgba(31, 90, 23, 0.1)),linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
         color: rgb(31, 90, 23);
 
         &::-webkit-input-placeholder {
@@ -228,11 +233,12 @@ form {
   + .value-list {
     border-color: transparent transparent transparent transparent;
     li {
+      background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
       color: rgb(31, 90, 23);
 
       &:hover {
         border: 1px solid rgb(31, 90, 23);
-        background-color: rgb(31, 90, 23, 0.1);
+        background:  linear-gradient(rgba(31, 90, 23, 0.1),rgba(31, 90, 23, 0.1)),linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
       }
     }
   }
@@ -286,7 +292,7 @@ form {
   $value: 10 + ($i * 20);  
   .W-#{$value},
   .W-#{$value} + ul {
-    width: percentage($value / 100);
+    width: #{$value}#{"%"};
   }
 }
 
@@ -363,3 +369,5 @@ form {
 .txt-right + ul li {
   text-align: right;
 }
+
+/*cursor*/

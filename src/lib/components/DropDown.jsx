@@ -4,7 +4,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 import cx from "classnames";
 import styled from "styled-components";
-import { allBorderClass, allWidthClass, allColorsClass, allFontClass } from "./classGenerator";
+import {
+  allBorderClass,
+  allWidthClass,
+  allColorsClass,
+  allFontClass,
+} from "./classGenerator";
 
 const StyledSelect = styled.ul`
   width: ${(props) => (props.width ? `${props.width}px` : `100%`)};
@@ -21,12 +26,9 @@ const StyledSelect = styled.ul`
 const StyleList = styled.li`
   position: relative;
   height: ${(props) => (props.height ? `${props.height}px` : ``)};
-  font-family: ${(props) =>
-    props.fontFamily ? `${props.fontFamily}` : "sans-serif"};
-  background-color: #fafcfd;
+  font-family: ${(props) => (props.fontFamily ? `${props.fontFamily}` : "Arial, Helvetica, sans-serif")};
   font-size: 1.1rem;
   text-align: center;
-  cursor: pointer;
   transition: background-color 0.3s;
   opacity: 1;
   padding: ${(props) => (props.padding ? `${props.padding}px` : `3px`)};
@@ -34,8 +36,7 @@ const StyleList = styled.li`
 const StyledInput = styled.input`
   width: ${(props) => (props.width ? `${props.width}px` : `100%`)};
   height: ${(props) => (props.height ? `${props.height}px` : `auto`)};
-  font-family: ${(props) =>
-    props.fontFamily ? `${props.fontFamily}` : "sans-serif"};
+  font-family: ${(props) => (props.fontFamily ? `${props.fontFamily}` : "Arial, Helvetica, sans-serif")};
   font-size: 1.1rem;
   padding: ${(props) => (props.padding ? `${props.padding}px` : `3px`)};
   transition: 0.3s ease-in-out;
@@ -55,46 +56,48 @@ export function DropDown({
   fontFamily,
   padding,
   fontClass,
+  customClass,
   placeholder,
   defaultValue,
-  id
+  id,
 }) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState(
     defaultValue ? defaultValue : ""
   );
   const handleCloseOpenClick = () => {
     setIsOpen(!isOpen);
-    console.log("j'ai click")
+    console.log("j'ai click");
   };
-  
-  useEffect(() => {
+
+  /*useEffect(() => {
     isOpen
       ? document.addEventListener("click", handleCloseOpenClick)
       : document.removeEventListener("click", handleCloseOpenClick);
     return () => {
       document.removeEventListener("click", handleCloseOpenClick);
     };
-  }, [isOpen]);
+  }, [isOpen]);*/
 
   return (
-    <div>
+    <form>
       <StyledDiv
-      onClick={() => {
-        handleCloseOpenClick();
-      }}
+        onClick={() => {
+          handleCloseOpenClick();
+        }}
         className={cx(
           "styleDiv",
+          customClass,
           colorClass ? allColorsClass(colorClass) : "",
-          widthClass ? allWidthClass(widthClass) :"",
+          widthClass ? allWidthClass(widthClass) : "",
           fontClass ? allFontClass(fontClass) : "",
-          borderClass ? allBorderClass(borderClass) : "",
+          borderClass ? allBorderClass(borderClass) : ""
         )}
       >
         <StyledInput
           className={`chosen-value ${isOpen ? "open" : ""}`}
           type="text"
-          defaultValue={inputValue}
+          value={inputValue}
           placeholder={placeholder}
           onClick={() => {
             handleCloseOpenClick();
@@ -103,7 +106,10 @@ export function DropDown({
           height={height}
           id={`${id ? id : "dropdown-input"}`}
         />
-        <label htmlFor={`${id ? id : "dropdown-input"}`}className="arrow"></label>
+        <label
+          htmlFor={`${id ? id : "dropdown-input"}`}
+          className="arrow"
+        ></label>
       </StyledDiv>
       <StyledSelect
         className={`value-list ${isOpen ? "open" : ""}`}
@@ -111,6 +117,7 @@ export function DropDown({
         height={height}
       >
         {option.map((data) => (
+          
           <StyleList
             onClick={() => {
               handleCloseOpenClick();
@@ -124,6 +131,6 @@ export function DropDown({
           </StyleList>
         ))}
       </StyledSelect>
-      </div>
+    </form>
   );
 }

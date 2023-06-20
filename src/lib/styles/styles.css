@@ -3,8 +3,12 @@ form {
   width: auto;
 }
 
+.styleDiv {
+  width: 100%;
+}
 .styleDiv input {
   border: 2px solid;
+  cursor: pointer;
 }
 .styleDiv input::after {
   position: absolute;
@@ -20,9 +24,6 @@ form {
   border-left: 2px solid transparent;
   border-right: 2px solid transparent;
 }
-.styleDiv input.chosen-value:hover {
-  cursor: pointer;
-}
 .styleDiv input.chosen-value:focus {
   outline: 0;
 }
@@ -32,6 +33,9 @@ form {
 .styleDiv input.chosen-value.open + .arrow {
   transform: translateY(50%);
   rotate: 180deg;
+}
+.styleDiv input.chosen-value:hover {
+  cursor: cursor;
 }
 .styleDiv input + .arrow {
   position: absolute;
@@ -58,6 +62,7 @@ form {
   opacity: 0;
 }
 .styleDiv + .value-list li:hover {
+  cursor: pointer;
   border: 1px solid rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.1);
 }
@@ -67,7 +72,7 @@ form {
 .red-style input {
   color: rgb(161, 15, 15);
   border-color: rgb(161, 15, 15);
-  background: white;
+  background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
 }
 .red-style input.chosen-value + ul {
   border-color: transparent;
@@ -76,7 +81,7 @@ form {
   color: white;
 }
 .red-style input.chosen-value:hover {
-  background-color: rgba(161, 15, 15, 0.1);
+  background: linear-gradient(rgba(161, 15, 15, 0.1), rgba(161, 15, 15, 0.1)), linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   color: rgb(161, 15, 15);
 }
 .red-style input.chosen-value:hover::-webkit-input-placeholder {
@@ -86,7 +91,7 @@ form {
   border-color: rgb(161, 15, 15) transparent transparent transparent;
 }
 .red-style input.chosen-value.open {
-  background-color: rgba(161, 15, 15, 0.1);
+  background: linear-gradient(rgba(161, 15, 15, 0.1), rgba(161, 15, 15, 0.1)), linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   color: rgb(161, 15, 15);
 }
 .red-style input.chosen-value.open::-webkit-input-placeholder {
@@ -99,18 +104,19 @@ form {
   border-color: transparent transparent transparent transparent;
 }
 .red-style + .value-list li {
+  background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   color: rgb(161, 15, 15);
 }
 .red-style + .value-list li:hover {
   border: 1px solid rgb(161, 15, 15);
-  background-color: rgba(161, 15, 15, 0.1);
+  background: linear-gradient(rgba(161, 15, 15, 0.1), rgba(161, 15, 15, 0.1)), linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
 }
 
 /*.BLUE*/
 .blue-style input {
   color: rgb(18, 27, 143);
   border-color: rgb(18, 27, 143);
-  background: white;
+  background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
 }
 .blue-style input.chosen-value + ul {
   border-color: transparent;
@@ -119,7 +125,7 @@ form {
   color: white;
 }
 .blue-style input.chosen-value:hover {
-  background-color: rgba(18, 27, 143, 0.1);
+  background: linear-gradient(rgba(18, 27, 143, 0.1), rgba(18, 27, 143, 0.1)), linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   color: rgb(18, 27, 143);
 }
 .blue-style input.chosen-value:hover::-webkit-input-placeholder {
@@ -129,7 +135,7 @@ form {
   border-color: rgb(18, 27, 143) transparent transparent transparent;
 }
 .blue-style input.chosen-value.open {
-  background-color: rgba(18, 27, 143, 0.1);
+  background: linear-gradient(rgba(18, 27, 143, 0.1), rgba(18, 27, 143, 0.1)), linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   color: rgb(18, 27, 143);
 }
 .blue-style input.chosen-value.open::-webkit-input-placeholder {
@@ -142,18 +148,19 @@ form {
   border-color: transparent transparent transparent transparent;
 }
 .blue-style + .value-list li {
+  background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   color: rgb(18, 27, 143);
 }
 .blue-style + .value-list li:hover {
   border: 1px solid rgb(18, 27, 143);
-  background-color: rgba(18, 27, 143, 0.1);
+  background: linear-gradient(rgba(18, 27, 143, 0.1), rgba(18, 27, 143, 0.1)), linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
 }
 
 /*.GREEN*/
 .green-style input {
   color: rgb(31, 90, 23);
   border-color: rgb(31, 90, 23);
-  background: white;
+  background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
 }
 .green-style input.chosen-value + ul {
   border-color: transparent;
@@ -162,7 +169,7 @@ form {
   color: white;
 }
 .green-style input.chosen-value:hover {
-  background-color: rgba(31, 90, 23, 0.1);
+  background: linear-gradient(rgba(31, 90, 23, 0.1), rgba(31, 90, 23, 0.1)), linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   color: rgb(31, 90, 23);
 }
 .green-style input.chosen-value:hover::-webkit-input-placeholder {
@@ -172,7 +179,7 @@ form {
   border-color: rgb(31, 90, 23) transparent transparent transparent;
 }
 .green-style input.chosen-value.open {
-  background-color: rgba(31, 90, 23, 0.1);
+  background: linear-gradient(rgba(31, 90, 23, 0.1), rgba(31, 90, 23, 0.1)), linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   color: rgb(31, 90, 23);
 }
 .green-style input.chosen-value.open::-webkit-input-placeholder {
@@ -185,11 +192,12 @@ form {
   border-color: transparent transparent transparent transparent;
 }
 .green-style + .value-list li {
+  background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   color: rgb(31, 90, 23);
 }
 .green-style + .value-list li:hover {
   border: 1px solid rgb(31, 90, 23);
-  background-color: rgba(31, 90, 23, 0.1);
+  background: linear-gradient(rgba(31, 90, 23, 0.1), rgba(31, 90, 23, 0.1)), linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
 }
 
 /*border-style*/
@@ -346,5 +354,7 @@ form {
 .txt-right + ul li {
   text-align: right;
 }
+
+/*cursor*/
 
 /*# sourceMappingURL=styles.css.map */
