@@ -1,6 +1,6 @@
 {
   "name": "flexidropdown",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "repository": {
@@ -11,11 +11,23 @@
     "dist"
   ],
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.23",
+    "@storybook/addon-interactions": "^7.0.23",
+    "@storybook/addon-links": "^7.0.23",
+    "@storybook/blocks": "^7.0.23",
+    "@storybook/preset-create-react-app": "^7.0.23",
+    "@storybook/react": "^7.0.23",
+    "@storybook/react-webpack5": "^7.0.23",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "babel-cli": "^6.26.0",
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "jsdoc": "^4.0.2",
+    "prop-types": "^15.8.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4",
-    "react-test-renderer": "^16.3.2"
+    "react-test-renderer": "^16.3.2",
+    "storybook": "^7.0.23",
+    "webpack": "^5.88.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,11 +35,26 @@
     "build-examples": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__"
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "classnames": "^2.3.2",
     "node-sass": "^9.0.0",
+    "react-scripts": "^5.0.1",
     "styled-components": "^5.3.11"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
