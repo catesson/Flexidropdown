@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/styles.css";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useRef } from "react";
 import cx from "classnames";
 import styled from "styled-components";
 import {
@@ -44,23 +45,25 @@ const StyledDiv = styled.div`
 `;
 
 /**
+ * [exported]
  * represents a component DropDown
  * @name DropDown
  * @function
- * @param {Object[]} option - array of data 
- * @param {string} optionValue - the name of the champ who content value
- * @param {int} width - the value of fix width
- * @param {int} height - the value of fix height
- * @param {string} colorClass - the name of the class color you want (red-style, blue-style or green-style) 
- * @param {string} widthClass - the name of the class for the width you want (W-30, W-50, W-70 or W-90)
- * @param {string} borderClass - the name of the all class for control the border you want ("str-border, mdm-border, rad5-border, rad10-border, rad15-border, rad20-border, rad25-border or no-border)
- * @param {string} fontClass - the name of the all class for control th font you want (ft1, ft2, ft3, ft4, ft5, ft6, ft-bold, ft-light, ft-uppercase, txt-center or txt-right)
- * @param {string} fontFamily - the name of the font-familly you want use
- * @param {int} padding - the value of the padding you want
- * @param {string} customClass - the name of the class you have create in your css
- * @param {string} placeholder - the value of the placeholder input
- * @param {string} defaultValue - the default value of input
- * @param {string} id - the id you want use for the input
+ * @param {Object} props - the props
+ * @param {Object[]}  props.option - array of data 
+ * @param {string}  props.optionValue - the name of the champ who content value
+ * @param {int}  props.width - the value of fix width
+ * @param {int}  props.height - the value of fix height
+ * @param {string}  props.colorClass - the name of the class color you want (red-style, blue-style or green-style) 
+ * @param {string}  props.widthClass - the name of the class for the width you want (W-30, W-50, W-70 or W-90)
+ * @param {string}  props.borderClass - the name of the all class for control the border you want ("str-border, mdm-border, rad5-border, rad10-border, rad15-border, rad20-border, rad25-border or no-border)
+ * @param {string}  props.fontClass - the name of the all class for control th font you want (ft1, ft2, ft3, ft4, ft5, ft6, ft-bold, ft-light, ft-uppercase, txt-center or txt-right)
+ * @param {string}  props.fontFamily - the name of the font-familly you want use
+ * @param {int}  props.padding - the value of the padding you want
+ * @param {string}  props.customClass - the name of the class you have create in your css
+ * @param {string}  props.placeholder - the value of the placeholder input
+ * @param {string}  props.defaultValue - the default value of input
+ * @param {string}  props.id - the id you want use for the input
  * @returns {JSX.Element} - the jsx Element, represent the dropdown component 
  * 
  @example
@@ -99,25 +102,34 @@ export function DropDown({
   const [inputValue, setInputValue] = useState(
     defaultValue ? defaultValue : ""
   );
+  //hook who take the value of the div with ref = {dropDownRef}
+  const dropDownRef = useRef();
   /*listener for open or close the dropdown*/
   const handleCloseOpenClick = () => {
     setIsOpen(!isOpen);
+  
   };
 
-  /*useEffect(() => {
-    isOpen
-      ? document.addEventListener("click", handleCloseOpenClick)
-      : document.removeEventListener("click", handleCloseOpenClick);
+  useEffect(() => {
+    const handleClose = (event) => {
+      //controle the click isn't in dropDown div
+      if (!dropDownRef.current.contains(event.target)) {
+      setIsOpen(false)
+      }
+    }
+    isOpen ? 
+     document.addEventListener("click", handleClose)
+     : null
     return () => {
-      document.removeEventListener("click", handleCloseOpenClick);
+      document.removeEventListener("click", handleClose);
     };
-  }, [isOpen]);*/
-
+  }, [isOpen]);
   return (
-    <form>
+    <div ref={dropDownRef}>
       <StyledDiv
         onClick={() => {
           handleCloseOpenClick();
+          
         }}
         className={cx(
           "styleDiv",
@@ -132,10 +144,8 @@ export function DropDown({
           className={`chosen-value ${isOpen ? "open" : ""}`}
           type="text"
           value={inputValue}
+          onChange={() => {}}
           placeholder={placeholder}
-          onClick={() => {
-            handleCloseOpenClick();
-          }}
           width={width}
           height={height}
           padding={padding}
@@ -166,6 +176,6 @@ export function DropDown({
           </StyleList>
         ))}
       </StyledSelect>
-    </form>
+    </div>
   );
 }

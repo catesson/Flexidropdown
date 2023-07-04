@@ -90,16 +90,14 @@ form {
       }
 
       &::-webkit-input-placeholder {
-        color: white;
+        color: rgb(161, 15, 15, 0.7);
       }
 
       &:hover {
         background:  linear-gradient(rgba(161, 15, 15, 0.1),rgba(161, 15, 15, 0.1)),linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));    
         color: rgb(161, 15, 15);
 
-        &::-webkit-input-placeholder {
-          color: white;
-        }
+        
         + .arrow {
           border-color: rgb(161, 15, 15) transparent transparent transparent;
         }
@@ -146,16 +144,14 @@ form {
       }
 
       &::-webkit-input-placeholder {
-        color: white;
+        color: rgb(18, 27, 143, 0.7)
       }
 
       &:hover {
         background:  linear-gradient(rgba(18, 27, 143, 0.1),rgba(18, 27, 143, 0.1)),linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
         color: rgb(18, 27, 143);
 
-        &::-webkit-input-placeholder {
-          color: white;
-        }
+      
         + .arrow {
           border-color: rgb(18, 27, 143) transparent transparent transparent;
         }
@@ -201,16 +197,14 @@ form {
       }
 
       &::-webkit-input-placeholder {
-        color: white;
+        color: rgb(31, 90, 23, 0.7);
       }
 
       &:hover {
         background:  linear-gradient(rgba(31, 90, 23, 0.1),rgba(31, 90, 23, 0.1)),linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
         color: rgb(31, 90, 23);
 
-        &::-webkit-input-placeholder {
-          color: white;
-        }
+      
         + .arrow {
           border-color: rgb(31, 90, 23) transparent transparent transparent;
         }

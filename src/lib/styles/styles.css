@@ -78,14 +78,11 @@ form {
   border-color: transparent;
 }
 .red-style input.chosen-value::-webkit-input-placeholder {
-  color: white;
+  color: rgba(161, 15, 15, 0.7);
 }
 .red-style input.chosen-value:hover {
   background: linear-gradient(rgba(161, 15, 15, 0.1), rgba(161, 15, 15, 0.1)), linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   color: rgb(161, 15, 15);
-}
-.red-style input.chosen-value:hover::-webkit-input-placeholder {
-  color: white;
 }
 .red-style input.chosen-value:hover + .arrow {
   border-color: rgb(161, 15, 15) transparent transparent transparent;
@@ -122,14 +119,11 @@ form {
   border-color: transparent;
 }
 .blue-style input.chosen-value::-webkit-input-placeholder {
-  color: white;
+  color: rgba(18, 27, 143, 0.7);
 }
 .blue-style input.chosen-value:hover {
   background: linear-gradient(rgba(18, 27, 143, 0.1), rgba(18, 27, 143, 0.1)), linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   color: rgb(18, 27, 143);
-}
-.blue-style input.chosen-value:hover::-webkit-input-placeholder {
-  color: white;
 }
 .blue-style input.chosen-value:hover + .arrow {
   border-color: rgb(18, 27, 143) transparent transparent transparent;
@@ -166,14 +160,11 @@ form {
   border-color: transparent;
 }
 .green-style input.chosen-value::-webkit-input-placeholder {
-  color: white;
+  color: rgba(31, 90, 23, 0.7);
 }
 .green-style input.chosen-value:hover {
   background: linear-gradient(rgba(31, 90, 23, 0.1), rgba(31, 90, 23, 0.1)), linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   color: rgb(31, 90, 23);
-}
-.green-style input.chosen-value:hover::-webkit-input-placeholder {
-  color: white;
 }
 .green-style input.chosen-value:hover + .arrow {
   border-color: rgb(31, 90, 23) transparent transparent transparent;

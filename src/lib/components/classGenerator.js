@@ -1,4 +1,5 @@
 /**
+ * [internal]
  * function who check the class are choice in the props ColorClass in the component DropDown and return the class if they are choice
  * @name allColorsClass
  * @function
@@ -32,6 +33,7 @@ export const allColorsClass = (color) => {
 };
 
 /**
+ * [internal]
  * function who check the class are choice in the props widthClass in the component DropDown and return the class if they are choice
  * @name allWidthClass
  * @function
@@ -67,6 +69,7 @@ export const allWidthClass = (width) => {
 };
 
 /**
+ * [internal]
  * function who check the class are choice in the props borderClass in the component DropDown and return the class if they are choice
  * @name allBorderClass
  * @function
@@ -109,13 +112,14 @@ export const allBorderClass = (border) => {
   };
 };
 /**
+ * [internal]
  * function who check the class are choice in the props fontClass in the component DropDown and return the class if they are choice
  * @name allFontClass
  * @function
  * @param {string} font - Class are choice in the fontClass props of the dropdown component
  * @return {object} - object content all font class with the boolean statue true or false, is they are choice or not. 
  * @example
-  * //Dropdown
+ * //Dropdown
  * <DropDown 
  *      option={examples} 
  *      optionValue="name"
@@ -143,12 +147,12 @@ export const allBorderClass = (border) => {
  */
 export const allFontClass = (font) => {
   return {
-    ft1: font.includes("ft1"),
-    ft2: font.includes("ft2"),
-    ft3: font.includes("ft3"),
-    ft4: font.includes("ft4"),
-    ft5: font.includes("ft5"),
-    ft6: font.includes("ft6"),
+    "ft1": font.includes("ft1"),
+    "ft2": font.includes("ft2"),
+    "ft3": font.includes("ft3"),
+    "ft4": font.includes("ft4"),
+    "ft5": font.includes("ft5"),
+    "ft6": font.includes("ft6"),
     "ft-bold": font.includes("ft-bold"),
     "ft-light": font.includes("ft-light"),
     "ft-uppercase": font.includes("ft-uppercase"),
