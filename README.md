@@ -8,3 +8,6 @@ Learn more: https://hackernoon.com/creating-a-library-of-react-components-using-
 ```
 npm install flexidropdown
 ```
+
+npm run build
+npm publish

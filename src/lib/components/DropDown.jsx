@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from "react";
 import "../styles/styles.css";
 import { useState } from "react";
@@ -113,13 +114,12 @@ export function DropDown({
   useEffect(() => {
     const handleClose = (event) => {
       //controle the click isn't in dropDown div
-      if (!dropDownRef.current.contains(event.target)) {
+      if (!dropDownRef.current.focus(event.target)) {
       setIsOpen(false)
       }
     }
-    isOpen ? 
-     document.addEventListener("click", handleClose)
-     : null
+    if(isOpen) {
+     document.addEventListener("click", handleClose)}
     return () => {
       document.removeEventListener("click", handleClose);
     };
